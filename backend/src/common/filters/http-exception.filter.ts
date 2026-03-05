@@ -7,16 +7,7 @@ import {
     Logger,
 } from '@nestjs/common';
 import { Request, Response } from 'express';
-
-export class AppException extends HttpException {
-    constructor(
-        public readonly code: string,
-        message: string | string[],
-        status: HttpStatus = HttpStatus.BAD_REQUEST,
-    ) {
-        super({ code, message }, status);
-    }
-}
+import { AppException } from '../exceptions/app.exception';
 
 @Catch()
 export class HttpExceptionFilter implements ExceptionFilter {
